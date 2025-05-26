@@ -17,8 +17,12 @@ const props = defineProps({
   },
   placeholder: {
     type: String,
-    default: "",
+    default: '',
   },
+  bordered: {
+    type: Boolean,
+    default: false,
+  }
 });
 
 const sizes = computed(() => ({
@@ -39,10 +43,15 @@ const types = computed(() =>
     url: "url",
     search: "search",
 }))
+
+const inputClasses = computed(() => [
+    props.bordered ? "border border-gray-300 rounded-lg" : props.default,
+    props.placeholder ? "p-2" : props.placeholder.default
+].join(" "))
 </script>
 
 <template>
-  <input :class="` ${sizes[size]} ${types[type]}`">
+  <input :placeholder="placeholder" :class="`${inputClasses} ${sizes[size]} ${types[type]}`">
   <slot />
   </input>
 </template>

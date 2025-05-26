@@ -1,6 +1,7 @@
 <script setup>
 import mButton from "./components/mButton.vue";
-import mInput from "./components/mInput.vue"
+import mInput from "./components/mInput.vue";
+import mBadge from "./components/mBadge.vue";
 import { ref } from "vue";
 
 // State for buttons
@@ -12,19 +13,23 @@ import { ref } from "vue";
 //   }, 2000);
 // };
 
-
 // State for input
-
 </script>
 
 <template>
-  <!-- Examples for mButton component -->
-   <mButton >
-    Click me
-   </mButton>
+  <div class="flex flex-col items-start p-10 gap-10">
+    <!-- Examples for mButton component -->
+    <mButton> Click me </mButton>
 
-  <!-- Examples for mInput component -->
-   <mInput size="xl" />
-   
-  
+    <!-- Examples for mInput component -->
+    <mInput placeholder="Write something" bordered size="xl" />
+
+    <!-- Examples for mBadge component -->
+    <mBadge size="sm" color="success">
+      1
+    </mBadge>
+    <mBadge color="info">
+      !
+    </mBadge>
+  </div>
 </template>
