@@ -26,7 +26,7 @@ import { ref } from "vue";
 
     <!-- Examples for mBadge component -->
     <mBadge size="sm" color="success">
-      1
+      100
     </mBadge>
     <mBadge color="info">
       !
