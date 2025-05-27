@@ -25,11 +25,8 @@ import { ref } from "vue";
     <mInput placeholder="Write something" bordered size="xl" />
 
     <!-- Examples for mBadge component -->
-    <mBadge size="sm" color="success">
-      100
-    </mBadge>
-    <mBadge color="info">
-      !
-    </mBadge>
+    <mBadge size="sm" color="success"> 100 </mBadge>
+    <mBadge color="info"> ! </mBadge>
+    <mBadge color="info" dot/>
   </div>
 </template>
