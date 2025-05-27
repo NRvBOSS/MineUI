@@ -10,12 +10,13 @@ const props = defineProps({
     type: String,
     default: "primary",
   },
-  maxCount: {
-    type: Number,
-  },
   dot: {
     type: Boolean,
     default: false,
+  },
+  position: {
+    type: String,
+    default: "top-right",
   },
 });
 
@@ -42,7 +43,7 @@ const slots = useSlots();
 const badgeContent = computed(() => {
   const slotValue = slots.default ? slots.default()[0]?.children : "";
   const num = Number(slotValue);
-  if (!isNaN(num)) {
+  if (!isNaN(num) && slotValue !== "") {
     return num > 99 ? "99+" : num;
   }
   return slotValue;
@@ -73,11 +74,20 @@ const badgeClass = computed(() => {
     }[props.color];
   }
 });
+
+const positions = computed(() => ({
+  "top-right": "absolute top-0 right-0",
+  "top-left": "absolute top-0 left-0",
+  "bottom-right": "absolute bottom-0 right-0",
+  "bottom-left": "absolute bottom-0 left-0",
+}));
 </script>
 
 <template>
   <div class="flex items-center gap-2">
-    <span :class="[sizes[props.size], badgeClass]">
+    <span
+      :class="[sizes[props.size], badgeClass, positions[props.position],]"
+    >
       <template v-if="!props.dot">{{ badgeContent }}</template>
     </span>
   </div>

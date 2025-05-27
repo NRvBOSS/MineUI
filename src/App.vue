@@ -27,6 +27,10 @@ import { ref } from "vue";
     <!-- Examples for mBadge component -->
     <mBadge size="sm" color="success"> 100 </mBadge>
     <mBadge color="info"> ! </mBadge>
-    <mBadge color="info" dot/>
+    <div  class="relative inline-block">
+      <mButton size="xl" rounded>
+        <mBadge color="primary" dot /> Click me(dot)</mButton
+      >
+    </div>
   </div>
 </template>
