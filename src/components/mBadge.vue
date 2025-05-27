@@ -16,7 +16,6 @@ const props = defineProps({
   },
   position: {
     type: String,
-    default: "top-right",
   },
 });
 
@@ -28,16 +27,6 @@ const sizes = {
   xl: "text-xl",
 };
 
-const colors = computed(() => ({
-  primary: "px-2 py-1 rounded-full bg-blue-500 text-white",
-  secondary: "px-2 py-1 rounded-full bg-gray-500 text-white",
-  success: "px-2 py-1 rounded-full bg-green-500 text-white",
-  danger: "px-2 py-1 rounded-full bg-red-500 text-white",
-  warning: "px-2 py-1 rounded-full bg-yellow-500 text-black",
-  info: "px-2 py-1 rounded-full bg-cyan-500 text-white",
-  light: "px-2 py-1 rounded-full bg-gray-200 text-black",
-  dark: "px-2 py-1 rounded-full bg-gray-800 text-white",
-}));
 const slots = useSlots();
 
 const badgeContent = computed(() => {
@@ -85,9 +74,7 @@ const positions = computed(() => ({
 
 <template>
   <div class="flex items-center gap-2">
-    <span
-      :class="[sizes[props.size], badgeClass, positions[props.position],]"
-    >
+    <span :class="[sizes[props.size], badgeClass, positions[props.position]]">
       <template v-if="!props.dot">{{ badgeContent }}</template>
     </span>
   </div>

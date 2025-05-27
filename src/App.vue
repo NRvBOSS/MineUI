@@ -2,6 +2,7 @@
 import mButton from "./components/mButton.vue";
 import mInput from "./components/mInput.vue";
 import mBadge from "./components/mBadge.vue";
+import mTitle from "./components/mTitle.vue";
 import { ref } from "vue";
 
 // State for buttons
@@ -27,10 +28,14 @@ import { ref } from "vue";
     <!-- Examples for mBadge component -->
     <mBadge size="sm" color="success"> 100 </mBadge>
     <mBadge color="info"> ! </mBadge>
-    <div  class="relative inline-block">
+    <div class="relative inline-block">
       <mButton size="xl" rounded>
-        <mBadge color="primary" dot /> Click me(dot)</mButton
+        <mBadge position="top-right" color="primary" dot /> Click
+        me(dot)</mButton
       >
     </div>
+
+    <!-- Examples for mTitle component -->
+    <mTitle bold="" size="4xl"></mTitle>
   </div>
 </template>
