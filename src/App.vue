@@ -4,6 +4,7 @@ import mInput from "./components/mInput.vue";
 import mBadge from "./components/mBadge.vue";
 import mTitle from "./components/mTitle.vue";
 import mCard from "./components/mCard.vue";
+import mToggleSwitch from "./components/mToggleSwitch.vue";
 import { ref } from "vue";
 
 // State for buttons
@@ -106,6 +107,30 @@ import { ref } from "vue";
           />
         </div>
       </div>
+    </div>
+
+    <!-- Examples for mToggleSwitch component -->
+    <div class="space-y-6 p-6">
+      <!-- Basic Toggle -->
+      <mToggleSwitch v-model="toggle1" />
+
+      <!-- Colored Toggles -->
+      <mToggleSwitch v-model="toggle2" color="primary" />
+      <mToggleSwitch v-model="toggle3" color="success" />
+
+      <!-- Different Sizes -->
+      <mToggleSwitch v-model="toggle4" size="sm" />
+      <mToggleSwitch v-model="toggle5" size="lg" />
+
+      <!-- With Custom Labels -->
+      <mToggleSwitch
+        v-model="toggle6"
+        on-label="Enabled"
+        off-label="Disabled"
+      />
+
+      <!-- Disabled State -->
+      <mToggleSwitch v-model="toggle7" disabled />
     </div>
   </div>
 </template>
